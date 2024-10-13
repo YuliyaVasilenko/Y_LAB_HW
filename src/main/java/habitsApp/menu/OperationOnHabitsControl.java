@@ -1,7 +1,4 @@
-package habitsApp.users.habits;
-
-import habitsApp.OperationInTheMenu;
-import habitsApp.OperationOnHabitsInformation;
+package habitsApp.menu;
 
 import java.util.Arrays;
 
@@ -28,8 +25,8 @@ public enum OperationOnHabitsControl {
     }
 
     public static void showOperation() {
-        System.out.println("Please chose an operation: " + Arrays.toString(OperationInTheMenu.values()));
-        for (OperationOnHabitsInformation operation : OperationOnHabitsInformation.values())
+        System.out.println("Please chose an operation: " + Arrays.toString(OperationOnHabitsControl.values()));
+        for (OperationOnHabitsControl operation : OperationOnHabitsControl.values())
             System.out.printf("%-50s press %d %n", operation.getDescription(), operation.getNumberOfOperation());
     }
 }

@@ -1,4 +1,4 @@
-package habitsApp;
+package habitsApp.menu;
 
 import java.util.Arrays;
 

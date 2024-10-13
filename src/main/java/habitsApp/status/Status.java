@@ -1,22 +1,18 @@
-package habitsApp.users.habits.status;
+package habitsApp.status;
 
 import java.time.LocalDate;
 
-public class Execution {
+public class Status {
     private LocalDate date;
     private boolean hasDone;
 
-    public Execution(LocalDate date) {
+    public Status(LocalDate date, boolean hasDone) {
         this.date = date;
-        hasDone = false;
+        this.hasDone = hasDone;
     }
 
     public LocalDate getDate() {
         return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public boolean isHasDone() {

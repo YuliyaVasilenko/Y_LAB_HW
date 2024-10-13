@@ -1,5 +1,6 @@
 package habitsApp.users.habits;
 
+import habitsApp.habits.Habit;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

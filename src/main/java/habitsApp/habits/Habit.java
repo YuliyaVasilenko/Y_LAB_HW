@@ -1,17 +1,19 @@
-package habitsApp.users.habits;
+package habitsApp.habits;
 
-import habitsApp.users.habits.status.Execution;
+import habitsApp.status.Progress;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Habit implements Serializable {
+    private int id;
     private String name;
     private String description;
     private int period;
     private LocalDate dateStart;
-    private ArrayList<Execution> statusDB;
+    private Progress progress;
+
+    static int staticId = 1;
 
     public Habit() {
     }
@@ -21,14 +23,12 @@ public class Habit implements Serializable {
         this.description = description;
         this.period = period;
         dateStart = LocalDate.now();
-        statusDB = new ArrayList<>();
-        statusDB.add(new Execution(dateStart));
+        id = staticId++;
+        progress = new Progress();
     }
 
-    {
-        if (!statusDB.contains(new Execution(LocalDate.now()))) {
-            statusDB.add(new Execution(LocalDate.now()));
-        }
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -63,20 +63,13 @@ public class Habit implements Serializable {
         this.dateStart = dateStart;
     }
 
-    public ArrayList<Execution> getStatusDB() {
-        return statusDB;
-    }
-
-    public void setStatusDB(ArrayList<Execution> statistics) {
-
-        this.statusDB = statistics;
+    public Progress getProgress() {
+        return progress;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("The habit ").append(name).append(", start at ").append(dateStart).append(", is repeated on ")
-                .append(period).append(" day, description: ").append(description);
-        return sb.toString();
+        return "The habit " + name + ", start at " + dateStart + ", is repeated on " +
+                period + " day, description: " + description;
     }
 }
