@@ -16,9 +16,6 @@ public class User implements Serializable {
 
     static int staticId = 1;
 
-    public User() {
-    }
-
     public User(String email, String name, String password) {
         this.email = email;
         this.name = name;
@@ -84,5 +81,6 @@ public class User implements Serializable {
         Habit habit = new HabitManager().choseHabit(habits);
         new ProgressManager().getStatistics(habit);
     }
+
 }
 
