@@ -1,6 +1,5 @@
 package habitsApp.menu;
 
-import habitsApp.menu.*;
 import habitsApp.reminder.ReminderManager;
 import habitsApp.users.User;
 import habitsApp.users.UserManager;
