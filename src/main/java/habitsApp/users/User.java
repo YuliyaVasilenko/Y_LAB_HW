@@ -5,7 +5,7 @@ import habitsApp.habits.HabitManager;
 import habitsApp.habits.HabitsSet;
 import habitsApp.status.ProgressManager;
 
-import java.io.*;
+import java.io.Serializable;
 
 public class User implements Serializable {
     private int id;
