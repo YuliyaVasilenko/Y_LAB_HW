@@ -102,7 +102,6 @@ public class HabitManager {
                     return;
                 }
                 //hs.printHabits(new HabitDAO().filterByStatus(userId, statusToShow));
-
             }
         }
     }
