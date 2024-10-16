@@ -1,6 +1,7 @@
-package habitsApp.users;
+package habitsApp.dao;
 
 import habitsApp.menu.HabitApp;
+import habitsApp.users.User;
 
 import java.util.ArrayList;
 import java.util.List;

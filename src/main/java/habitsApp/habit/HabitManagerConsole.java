@@ -1,4 +1,4 @@
-package habitsApp.habits;
+package habitsApp.habit;
 
 import habitsApp.menu.CheckWriting;
 
@@ -6,12 +6,12 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class HabitConsole {
+public class HabitManagerConsole {
     public String askHabitName() {
         return CheckWriting.checkWord("habit's name");
     }
 
-    public Habit createHabit(String habitName) {
+    public Habit createHabit(int userId, String habitName) {
         String habitDescription = CheckWriting.checkWord("habit's description");
         if (habitDescription == null) {
             return null;
@@ -21,10 +21,10 @@ public class HabitConsole {
         if (habitPeriod == 0) {
             return null;
         }
-        return new Habit(habitName, habitDescription, habitPeriod);
+        return new Habit(userId, habitName, habitDescription, habitPeriod);
     }
 
-    public int choseHabitIndex() {
+    public int choseHabitId() {
         System.out.println("Write the index of the habit you want to edit");
         return CheckWriting.isRightOperation(1, 100, 0);
     }
@@ -54,8 +54,8 @@ public class HabitConsole {
     }
 
     public int askHowSort() {
-        System.out.println("If you want to filter habits by the creation date press 1, " +
-                "to filter habits by their execution status press 2, to return to menu press 0");
+        System.out.println("If you want to filter habit by the creation date press 1, " +
+                "to filter habit by their execution status press 2, to return to menu press 0");
         return CheckWriting.isRightOperation(1, 2, 0);
     }
 
@@ -80,7 +80,7 @@ public class HabitConsole {
     }
 
     public int askStatusToShow() {
-        System.out.println("To show habits with status completed on today press 1, " +
+        System.out.println("To show habit with status completed on today press 1, " +
                 "with status uncompleted for today press 2, to exit to menu press 0");
         return CheckWriting.isRightOperation(1, 2, 0);
     }
@@ -90,7 +90,7 @@ public class HabitConsole {
             System.out.println("You don't have any habits yet");
             return;
         }
-        System.out.println("You have habits:");
+        System.out.println("You have habit:");
         System.out.printf("%-10s%-20s%-20s%s%n", "index", "name", "start at:", "description");
         for (Habit habit : habitList) {
             System.out.printf("%-10d%-20s%-20s%s%n", habit.getId(), habit.getName(),

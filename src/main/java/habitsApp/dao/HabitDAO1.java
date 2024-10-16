@@ -1,4 +1,7 @@
-package habitsApp.habits;
+/*
+package habitsApp.dao;
+
+import habitsApp.habit.Habit;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -6,15 +9,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HabitsSet {
+public class HabitDA {
     private Map<Integer, Habit> allHabits = new HashMap<>();
 
     public Map<Integer, Habit> getHabits() {
         return allHabits;
     }
 
-    public void setHabits(Map<Integer, Habit> habits) {
-        this.allHabits = habits;
+    public void setHabits(Map<Integer, Habit> habit) {
+        this.allHabits = habit;
     }
 
     public Habit findHabit(String name) {
@@ -81,3 +84,4 @@ public class HabitsSet {
         return list;
     }
 }
+*/

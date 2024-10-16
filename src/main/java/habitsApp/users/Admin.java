@@ -1,5 +1,7 @@
 package habitsApp.users;
 
+import habitsApp.dao.AdminDAO;
+
 public class Admin extends User {
 
     public Admin(User user) {

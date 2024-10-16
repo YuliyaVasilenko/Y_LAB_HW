@@ -5,9 +5,9 @@ import habitsApp.menu.CheckWriting;
 import java.time.format.DateTimeFormatter;
 import java.util.Deque;
 
-public class ProgressConsole {
+public class StatusConsole {
     public int askWhatStatus() {
-        System.out.println("To set status 'done' press 1, to set status 'unfinished' press 2, to exit to menu press 0");
+        System.out.println("To set status 'done' press 1, to set status 'not done' press 2, to exit to menu press 0");
         return CheckWriting.isRightOperation(1, 2,0);
     }
 

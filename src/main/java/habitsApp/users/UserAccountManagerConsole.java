@@ -2,7 +2,7 @@ package habitsApp.users;
 
 import habitsApp.menu.CheckWriting;
 
-public class UserConsole {
+public class UserAccountManagerConsole {
     public String askEmail() {
         return CheckWriting.checkEmail();
     }
@@ -53,6 +53,18 @@ public class UserConsole {
         if (user != null) {
             System.out.println("Success! Hello " + user.getName() + "!");
         }
+    }
+
+    public static void sayAlreadyAuthorized() {
+        System.out.println("You are already logged in. To log out press 1 or press 0 to return to menu");
+    }
+
+    public static void sayNotAuthorized() {
+        System.out.println("You are not logged in. Log in or registry first.");
+    }
+
+    public static void sayLogOut() {
+        System.out.println("You are log out.");
     }
 
     public static void sayUpdate() {

@@ -5,10 +5,11 @@ import java.util.Arrays;
 public enum OperationInTheMenu {
     AUTHORIZATION_AND_REGISTRATION(1, "If you want to log in or register"),
     CHANGE_DATA(2, "If you want to edit your profile"),
-    DELETE_ACCOUNT(3, "If you want to remove your profile"),
-    HABIT_INFORMATION(4, "If you want to move on to habit information"),
-    HABIT_CONTROL(5, "If you want to move on to habit control"),
-    EXIT(6, "If you want to exit");
+    LOG_OUT(3, "If you want to log out"),
+    DELETE_ACCOUNT(4, "If you want to remove your profile"),
+    HABITS(5, "If you want to move on to your habits"),
+    HABITS_CONTROL(6, "If you want to move on to the statuses of your habits"),
+    EXIT(7, "If you want to exit");
 
     private final int numberOfOperation;
     private final String description;

@@ -2,7 +2,7 @@ package habitsApp.menu;
 
 import java.util.Arrays;
 
-public enum OperationAdmin {
+public enum OperationInAdminMenu {
     SHOW_ALL_USERS(1, "If you want to show all user"),
     DELETE_USER(2, "If you want to delete user"),
     BLOCK_USER(3, "If you want to block user"),
@@ -12,7 +12,7 @@ public enum OperationAdmin {
     private final int numberOfOperation;
     private final String description;
 
-    OperationAdmin(int numberOfOperation, String description) {
+    OperationInAdminMenu(int numberOfOperation, String description) {
         this.numberOfOperation = numberOfOperation;
         this.description = description;
     }
@@ -25,8 +25,8 @@ public enum OperationAdmin {
     }
 
     public static void showOperation() {
-        System.out.println("Please chose an operation: " + Arrays.toString(OperationAdmin.values()));
-        for (OperationAdmin operationAdmin : OperationAdmin.values())
+        System.out.println("Please chose an operation: " + Arrays.toString(OperationInAdminMenu.values()));
+        for (OperationInAdminMenu operationAdmin : OperationInAdminMenu.values())
             System.out.printf("%-50s press %d %n", operationAdmin.getDescription(), operationAdmin.getNumberOfOperation());
     }
 }

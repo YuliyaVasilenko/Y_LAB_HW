@@ -2,7 +2,7 @@ package habitsApp.menu;
 
 import java.util.Arrays;
 
-public enum OperationOnHabitsControl {
+public enum OperationInHabitsStatusesMenu {
     SET_HABIT_STATUS(1, "If you want to change habit's status"),
     SHOW_HABIT_HISTORY(2, "If you want to show some habit's history"),
     SHOW_HABIT_STATISTICS(3, "If you want to delete some habit"),
@@ -12,7 +12,7 @@ public enum OperationOnHabitsControl {
     private final int numberOfOperation;
     private final String description;
 
-    OperationOnHabitsControl(int numberOfOperation, String description) {
+    OperationInHabitsStatusesMenu(int numberOfOperation, String description) {
         this.numberOfOperation = numberOfOperation;
         this.description = description;
     }
@@ -25,8 +25,8 @@ public enum OperationOnHabitsControl {
     }
 
     public static void showOperation() {
-        System.out.println("Please chose an operation: " + Arrays.toString(OperationOnHabitsControl.values()));
-        for (OperationOnHabitsControl operation : OperationOnHabitsControl.values())
+        System.out.println("Please chose an operation: " + Arrays.toString(OperationInHabitsStatusesMenu.values()));
+        for (OperationInHabitsStatusesMenu operation : OperationInHabitsStatusesMenu.values())
             System.out.printf("%-50s press %d %n", operation.getDescription(), operation.getNumberOfOperation());
     }
 }

@@ -1,6 +1,6 @@
 package habitsApp.reminder;
 
-import habitsApp.habits.Habit;
+import habitsApp.habit.Habit;
 import habitsApp.status.Status;
 import habitsApp.users.User;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class ReminderManager {
 
     public void updateAllStatus(User user) {
-        List<Habit> listAllHabits = user.getHabits().showAllHabits();
+        /*List<Habit> listAllHabits = user.getHabits().showAllHabits();
         for (Habit habit : listAllHabits) {
             //chose last modification status from each habit
             Status lastStatus = habit.getProgress().getExecution().peek();
@@ -20,11 +20,11 @@ public class ReminderManager {
                 Status newStatus = new Status(newDate, false);
                 habit.getProgress().getExecution().offer(newStatus);
             }
-        }
+        }*/
     }
 
     public List<Habit> findAllReminder(User user) {
-        List<Habit> resultList = new ArrayList<>();
+        /*List<Habit> resultList = new ArrayList<>();
         List<Habit> listAllHabits = user.getHabits().showAllHabits();
         for (Habit habit : listAllHabits) {
             Status lastStatus = habit.getProgress().getExecution().peek();
@@ -32,7 +32,8 @@ public class ReminderManager {
                 resultList.add(habit);
             }
         }
-        return resultList;
+        return resultList;*/
+        return null;
     }
 
     public void printReminder(User user) {

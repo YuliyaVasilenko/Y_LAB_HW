@@ -1,18 +1,22 @@
 package habitsApp.users;
 
-import habitsApp.habits.Habit;
-import habitsApp.habits.HabitManager;
-import habitsApp.habits.HabitsSet;
-import habitsApp.status.ProgressManager;
+import habitsApp.habit.Habit;
+import habitsApp.habit.HabitManager;
+import habitsApp.status.StatusManager;
 
 import java.io.Serializable;
 
+/**
+ * @author YuliyaVasilenko
+ * @date 12-10-2024
+ * Description: this class describes a user's entity
+ */
 public class User implements Serializable {
     private int id;
     private String email;
     private String name;
     private String password;
-    private HabitsSet habits;
+    //private HabitDAO habit;
 
     static int staticId = 1;
 
@@ -21,7 +25,7 @@ public class User implements Serializable {
         this.name = name;
         this.password = password;
         id = staticId++;
-        habits = new HabitsSet();
+        //habit = new HabitDAO();
     }
 
     public int getId() {
@@ -52,35 +56,42 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public HabitsSet getHabits() {
-        return habits;
+    /*public HabitDAO getHabits() {
+        return habit;
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User user)) return false;
+        return getId() == user.getId();
     }
 
     public boolean createHabit() {
-        return new HabitManager().createHabit(habits);
+        return new HabitManager().createHabit(id);
     }
 
     public boolean updateHabit() {
-        return new HabitManager().updateHabit(habits);
+        return new HabitManager().updateHabit(id);
     }
 
     public boolean deleteHabit() {
-        return new HabitManager().deleteHabit(habits);
+        return new HabitManager().deleteHabit(id);
     }
 
     public void showAndSortAllHabits() {
-        new HabitManager().showAndSortAllHabits(habits);
+        new HabitManager().showAndSortAllHabits(id);
     }
 
     public boolean setStatus() {
-        Habit habit = new HabitManager().choseHabit(habits);
-        return new ProgressManager().setStatus(habit);
+        Habit habit = new HabitManager().choseHabit(id);
+        return new StatusManager().setStatus(habit.getId());
     }
 
-    public void getStatisticsFromPeriod() {
+    /*public void getStatisticsFromPeriod() {
         Habit habit = new HabitManager().choseHabit(habits);
-        new ProgressManager().getStatistics(habit);
-    }
+        new StatusManager().getStatistics(habit);
+    }*/
 
 }
 
